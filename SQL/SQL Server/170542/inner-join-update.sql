@@ -9,3 +9,13 @@ FROM
     ON Tabela.id = Outra_tabela.id
 WHERE
     Condicao = 'Qualquer coisa'
+
+
+
+tentei dessa maneira acima nao rolou dai essa debaixo fluiu no MYSQL
+
+UPDATE validador INNER JOIN validador_antigo 
+ON validador.CPF = validador_antigo.CPF
+SET validador.DataInclusao = validador_antigo.DataInclusao
+WHERE
+ validador_antigo.DataInclusao is not null;
